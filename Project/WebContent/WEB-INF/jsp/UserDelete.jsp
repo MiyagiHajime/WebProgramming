@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +25,7 @@
 			<div class="col-sm-2">
 				<div class="right">
 					<a class="text-danger border-bottom border-danger"
-						href="http://localhost:8080/Example/Userlogin.html">ログアウト</a>
+						href="LogOut">ログアウト</a>
 				</div>
 			</div>
 		</div>
@@ -32,7 +35,7 @@
 	</div>
 	<br>
 	<div class="haba alert alert-primary">
-	<h5>ログインid:0001</h5>
+	<h5> ${A.name} </h5>
 	<h5>を本当に削除してよろしいでしょうか。</h5>
 	<br>
 	<br>
@@ -42,11 +45,16 @@
 	<div class="col-sm-3">
 	</div>
 	<div class="col-sm-3">
-	<a href="http://localhost:8080/Example/login.html"><input type="button" value="キャンセル"  class="btn"></a>
+	<a href="UserListServlet2"><input type="button" value="キャンセル"  class="btn"></a>
 	</div>
+
 	<div class="col-sm-3">
-	<a href="http://localhost:8080/Example/login.html"><input type="button" value="OK"  class="btn"></a>
+	<form action="Delete" method="post">
+		<input type="hidden" name="id" value="${A.id}">
+		<input type="submit" value="OK"  class="btn">
+	</form>
 	</div>
+
 	<div class="col-sm-3">
 	</div>
 	</div>
